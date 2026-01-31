@@ -136,3 +136,19 @@ class _MainappState extends State<Mainapp> {
 }
 
 </pre>
+
+<h4> OrientationBuilder </h4>
+
+<pre>
+
+            OrientationBuilder(builder: (context, orientation){
+          //sojasoje
+          if(orientation == Orientation.landscape){
+            return Text("Landscape",style: TextStyle(fontSize: 50),);
+          }
+          //bakabake
+          else{
+            return Text("Portrait",style: TextStyle(fontSize: 50),);
+          }
+        }
+</pre>
