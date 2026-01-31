@@ -56,3 +56,83 @@ class Profile extends StatelessWidget {
 }
   
 </pre>
+
+<h4> class 7: StatefulWidget,MediaQuery.of,  LayoutBuilder </h4>
+
+<pre>
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(Mainapp());
+}
+
+//Statefulwidget
+class Mainapp extends StatefulWidget {
+  const Mainapp({super.key});
+
+  @override
+  State<Mainapp> createState() => _MainappState();
+}
+
+class _MainappState extends State<Mainapp> {
+  int x  = 0;
+  @override
+  Widget build(BuildContext context) {
+    //Know context size
+    print(MediaQuery.of(context).size.width);
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Home"),
+          centerTitle: true,
+        ),
+        body:
+        //very importent for know the size of screen & for responce design
+        LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints){
+          if(constraints.maxWidth > 400){
+            return Text("400",style: TextStyle(fontSize: 50),);
+          }
+          else if(constraints.maxWidth < 222){
+            return Text("222",style: TextStyle(fontSize: 50),);
+          }
+          else{
+            return Text("300",style: TextStyle(fontSize: 50),);
+          }
+        }) ,
+        floatingActionButton: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(style:
+            IconButton.styleFrom(
+              backgroundColor: Colors.green,
+              foregroundColor: Colors.white,
+              shape: CircleBorder(),
+            )
+                ,onPressed: () {
+                  x++;
+                  print(x);
+                  //need must
+                  setState(() {});
+                }, icon: Icon(Icons.add)),
+            IconButton(style:
+            IconButton.styleFrom(
+              backgroundColor: Colors.green,
+              foregroundColor: Colors.white,
+              shape: CircleBorder(),
+            )
+                ,onPressed: () {
+                  x--;
+                  print(x);
+                  //need must
+                  setState(() {});
+                }, icon: Icon(Icons.remove))
+          ],
+        ),
+
+      ),
+    );
+  }
+}
+
+</pre>
