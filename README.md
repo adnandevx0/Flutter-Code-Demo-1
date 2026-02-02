@@ -247,3 +247,47 @@ class _MyappState extends State<Myapp> {
              ),
            ),
 </pre>
+
+<p>
+    FractionallySizedBox(
+  widthFactor: 0.7, // স্ক্রিনের বা প্যারেন্টের ৭০% প্রস্থ
+  child: ElevatedButton(
+    onPressed: () {},
+    child: Text("Click Me"),
+  ),
+)
+</p>
+<pre>
+     Container(
+           height: MediaQuery.sizeOf(context).height,
+           width: MediaQuery.sizeOf(context).width,
+           color: Colors.amber,
+           child:
+  //blanck space nibe ata 2 content
+           // ar maje hote pate ar sige like 10 bager 3 bag etc.
+           FractionallySizedBox(
+             heightFactor: 0.2,
+             widthFactor: 0.2,
+             child: Container(
+               height: 100 ,
+               width: 100,
+               color: Colors.red,
+               child: Text("3242"),
+             ) ,
+
+           ),
+         )
+
+
+AspectRatio হলো এমন একটি উইজেট যা তার চাইল্ড উইজেটকে একটি নির্দিষ্ট অনুপাত (Ratio) মেনে চলতে বাধ্য করে। সহজ কথায়, এটি উইজেটের চওড়া (Width) এবং উচ্চতার (Height) মধ্যে একটি নির্দিষ্ট সম্পর্ক বজায় রাখে।
+
+         AspectRatio(
+  aspectRatio: 16 / 9, // চওড়া ১৬ ভাগ হলে উচ্চতা হবে ৯ ভাগ
+  child: Container(
+    color: Colors.blue,
+    child: Icon(Icons.play_circle_fill, size: 50),
+  ),
+)
+
+
+</pre>
