@@ -152,3 +152,75 @@ class _MainappState extends State<Mainapp> {
           }
         }
 </pre>
+
+<h4> Flexible হলো একটি উইজেট যা Row, Column বা Flex-এর ভেতর তার চাইল্ড (child) উইজেটটি কতটুকু জায়গা দখল করবে তা নিয়ন্ত্রণ করে। </h4>
+<pre>
+
+import 'package:flutter/material.dart';
+
+void main(){
+runApp(Myapp());  
+}
+
+class Myapp extends StatefulWidget {
+  const Myapp({super.key});
+
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
+  @override
+  Widget build(BuildContext context) {
+   return MaterialApp(
+     home: Scaffold(
+       appBar: AppBar(
+         backgroundColor: Colors.redAccent,
+         leading:Icon(Icons.calculate),
+         title: Text("My Calculator"),
+         actions: [
+
+         ],
+       ),
+       body:Row(
+         children: [
+          Flexible(
+            //full nibe = fit: FlexFit.tight,
+            // fill nibe na = fit: FlexFit.loose,
+              fit: FlexFit.tight,
+             // 5 bager 3 bag nibe = flex: 3 karok akhane 3 niche 2
+              flex: 3,
+              child:
+          Container(
+            height: 100 ,
+            width: 100,
+            color: Colors.yellow,
+            child: Text("saf",style: TextStyle(fontSize: 50),) ,
+          )
+          ),
+           Flexible(
+           fit: FlexFit.tight,
+             child: Container(
+               height: 100 ,
+               width: 100,
+               color: Colors.blue,
+               child: Text("saf",style: TextStyle(fontSize: 50),) ,
+             ),
+           ),
+           Flexible(
+             fit: FlexFit.tight,
+             child: Container(
+               height: 100 ,
+               width: 100,
+               color: Colors.green,
+               child: Text("saf",style: TextStyle(fontSize: 50),) ,
+             ),
+           ),
+         ],
+       ) ,
+     )
+   );
+  }
+}
+
+</pre>
