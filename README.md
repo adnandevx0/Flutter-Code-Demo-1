@@ -224,3 +224,26 @@ class _MyappState extends State<Myapp> {
 }
 
 </pre>
+<h4> Size Box </h4>
+<pre>
+              Container(
+            height: 100 ,
+            width: 100,
+            color: Colors.yellow,
+            child: Text("saf",style: TextStyle(fontSize: 50),) ,
+          )
+          ),
+           //blanck space nibe ata 2 content ar maje hote pate
+           SizedBox(
+             width: 20,
+           ),
+           Flexible(
+           fit: FlexFit.tight,
+             child: Container(
+               height: 100 ,
+               width: 100,
+               color: Colors.blue,
+               child: Text("saf",style: TextStyle(fontSize: 50),) ,
+             ),
+           ),
+</pre>
